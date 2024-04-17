@@ -1,0 +1,35 @@
+.studentTotals {
+    display: flex;
+    justify-content: center;
+  }
+  .studentNameList {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+  }
+  
+  .studentDonationAmountList {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  
+  .listItemText {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .listItemSeparator {
+    width: 1px;
+    background-color: #c1c1c1;
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+  
+  .listItemText {
+    color: #5d5d5d;
+    margin-bottom: 10px;
+  }
