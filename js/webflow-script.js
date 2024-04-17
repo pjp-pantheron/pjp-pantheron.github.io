@@ -1215,13 +1215,13 @@
         var fullScreenEvents = "fullscreenchange webkitfullscreenchange mozfullscreenchange msfullscreenchange";
         var brandElement;
         api.ready = function() {
-          var shouldBrand = false
+          var shouldBrand = $html.attr("data-wf-status");
           var publishedDomain = $html.attr("data-wf-domain") || "";
           if (/\.webflow\.io$/i.test(publishedDomain) && location.hostname !== publishedDomain) {
-            shouldBrand = false;
+            shouldBrand = true;
           }
           if (shouldBrand && !isPhantom) {
-            brandElement = brandElement || createBadge();
+            brandElement = brandElement
             ensureBrand();
             setTimeout(ensureBrand, 500);
             $(doc).off(fullScreenEvents, onFullScreenChange).on(fullScreenEvents, onFullScreenChange);
@@ -3129,9 +3129,9 @@
     }
   });
 
-  // node_modules/symbol-observable/lib/ponyfill.js
+  // node_modules/redux/node_modules/symbol-observable/lib/ponyfill.js
   var require_ponyfill = __commonJS({
-    "node_modules/symbol-observable/lib/ponyfill.js"(exports) {
+    "node_modules/redux/node_modules/symbol-observable/lib/ponyfill.js"(exports) {
       "use strict";
       Object.defineProperty(exports, "__esModule", {
         value: true
@@ -3155,9 +3155,9 @@
     }
   });
 
-  // node_modules/symbol-observable/lib/index.js
+  // node_modules/redux/node_modules/symbol-observable/lib/index.js
   var require_lib = __commonJS({
-    "node_modules/symbol-observable/lib/index.js"(exports, module) {
+    "node_modules/redux/node_modules/symbol-observable/lib/index.js"(exports, module) {
       "use strict";
       Object.defineProperty(exports, "__esModule", {
         value: true
