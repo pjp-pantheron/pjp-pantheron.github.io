@@ -19,3 +19,32 @@ function handleSubmit(event) {
 
     alert("Student Totals Updated!")
   }
+
+async function getJson() {
+    $.ajaxSetup({
+        async: true,
+        crossDomain: true,
+        dataType: 'jsonp',
+    });
+
+    var JSONData = await $.getJSON('https://third-difficult-caribou.glitch.me/studentTotals.json')
+
+    return JSONData
+}
+
+
+async function main() {
+  document.getElementById("uploadArea").style.display = "none"
+  document.getElementById("submitArea").style.display = "none"
+
+  console.log("main")
+
+  await getJson()
+
+  document.getElementById("loader1").style.display = "none"
+
+  document.getElementById("uploadArea").style.display = "flex"
+  document.getElementById("submitArea").style.display = "flex"
+}
+
+main()

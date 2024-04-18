@@ -60,6 +60,13 @@ $("#searchBarInput").on('change keydown paste input', function(){
 
 async function main() {
     var json = await getJson();
+
+    document.getElementById("loader1").style.display = "none"
+    document.getElementById("searchBarInput").style.display = "flex"
+
+    document.getElementById("listArea").style.display = "flex"
+
+    
     console.log(json)
 
     await renderJson(json);
