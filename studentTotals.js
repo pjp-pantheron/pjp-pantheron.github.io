@@ -1,6 +1,8 @@
 async function getJson() {
     $.ajaxSetup({
-        async: true
+        async: true,
+        crossDomain: true,
+        dataType: 'jsonp',
     });
 
     var JSONData = await $.getJSON('https://third-difficult-caribou.glitch.me/studentTotals.json')
@@ -30,6 +32,31 @@ async function renderJson(json) {
         studentDonationAmountListObject.appendChild(studentDonationAmountText)
     }
 }
+
+$("#searchBarInput").on('change keydown paste input', function(){
+    console.log($("#searchBarInput").val())
+    var nameInput = $("#searchBarInput").val()
+
+    var nameElements = document.getElementById("studentNameList").children
+    var totalElements = document.getElementById("studentDonationAmountList").children
+
+    console.log(nameElements)
+
+    var i = 0;
+    for (var nameElement of nameElements) {
+        var name = nameElement.textContent
+
+        if (name.toLowerCase().includes(nameInput.toLowerCase().trim())) {
+            nameElement.style.display = "block"
+            totalElements[i].style.display = "block"
+        } else {
+            nameElement.style.display = "none"
+            totalElements[i].style.display = "none"
+        }
+
+        i++
+    }
+});
 
 async function main() {
     var json = await getJson();

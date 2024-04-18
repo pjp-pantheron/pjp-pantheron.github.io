@@ -1,7 +1,26 @@
 .studentTotals {
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
   }
+
+.searchBarInput {
+    max-width: 320px;
+    width: 100%;
+    margin-bottom: 30px;
+    height: 35px;
+    font-size: 18px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 8px;
+    outline: none;
+    border: 1px solid gray;
+}
+.listArea {
+    display: flex;
+    justify-content: center;
+}
   .studentNameList {
     display: flex;
     justify-content: flex-start;
