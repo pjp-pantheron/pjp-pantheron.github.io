@@ -3,7 +3,7 @@ async function getJson() {
         async: true
     });
 
-    var JSONData = await $.getJSON('https://fascinated-nutritious-chipmunk.glitch.me/studentTotals.json')
+    var JSONData = await $.getJSON('https://third-difficult-caribou.glitch.me/studentTotals.json')
 
     return JSONData
 }
@@ -12,8 +12,9 @@ async function renderJson(json) {
     var studentNameListObject = document.getElementById("studentNameList")
     var studentDonationAmountListObject = document.getElementById("studentDonationAmountList")
 
-    for (var studentName in json) {
-        var total = json[studentName]
+    for (var studentTotalData of json) {
+        var studentName = studentTotalData[0]
+        var total = studentTotalData[1]
 
         console.log(`${studentName}: ${total}`)
 
