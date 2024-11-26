@@ -2793,8 +2793,8 @@ figcaption {
   grid-row-gap: 2rem;
   opacity: .6;
   grid-template-rows: auto;
-  grid-template-columns: max-content;
-  grid-auto-columns: max-content;
+  grid-template-columns: 2;
+  grid-auto-columns: 2;
   grid-auto-flow: column;
   justify-content: start;
   justify-items: start;
@@ -2803,7 +2803,7 @@ figcaption {
 }
 
 .home_about_logo {
-  height: 2rem;
+  height: 2.5rem;
   padding-right: 40px;
 }
 
