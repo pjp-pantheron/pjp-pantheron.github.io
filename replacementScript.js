@@ -97,6 +97,35 @@ function createEventComponent(sampleEventComponent, eventName, eventDate, event_
 function replaceEvents() {
     var sampleEventComponent = document.querySelector("#sample_event_component")
     var events = data.events
+    
+    try {
+        events.sort(function(event1, event2) {
+            var event1Month = event1.event_date.split(" ")[0]
+            var event2Month = event2.event_date.split(" ")[0]
+
+            var event1Day = parseInt(event1.event_date.split(" ")[1])
+            var event2Day = parseInt(event2.event_date.split(" ")[1])
+            
+            if (event1Month == "March" && event2Month == "April") {
+              return 1;
+            }
+    
+            if (event1Month == "April" && event2Month == "March") {
+              return -1;
+            }
+
+            if (event1Day < event2Day) {
+                return -1;
+            } else if (event1Day > event2Day) {
+                return 1;
+            } else {
+                return 0;
+            }
+          });
+    } catch {
+
+    }
+
 
     for (var event of events) {
         var eventName = event.event_name
@@ -114,8 +143,12 @@ function replaceEvents() {
 
 // Execute the function after the page loads
 window.onload = async function() {
+    document.getElementsByClassName('page-wrapper')[0].style.display = 'none'; 
     data = await getJson();
     replacePlaceholdersInDOM(document.body);
     replaceEvents();
+
+    document.getElementById("replacement-loader").style.display = "none";
+    document.getElementsByClassName('page-wrapper')[0].style.display = 'block'; 
 };
 
