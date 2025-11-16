@@ -7,7 +7,7 @@ async function getJson() {
         dataType: 'jsonp',
     });
 
-    var JSONData = await $.getJSON('https://third-difficult-caribou.glitch.me/siteData.json')
+    var JSONData = await $.getJSON('https://pantheron.pjphs.org/siteData.json')
 
     return JSONData
 }
