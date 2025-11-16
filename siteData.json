@@ -1,0 +1,32 @@
+{
+  "year": "2026",
+  "month": "April",
+  "day": "24th",
+  "register_link": "",
+  "past_donation_goals": [
+    {
+      "year_1": 2025,
+      "total_1": "$57,548.91"
+    }
+    {
+      "year_2": 2024,
+      "total_2": "$54,807.80"
+    },
+    {
+      "year_3": 2023,
+      "total_3": "$45,267.31"
+    }
+  ],
+  "committee_member_count": "14",
+  "committee_leaders": "Belle Rosenberger and Josie Arezina",
+  "donate_link": "https://secure.acceptiva.com/?cst=uumo7Y",
+  "tier_prizes_image_link": "https://cdn.glitch.global/ad4485c2-267f-43c2-a33e-a572d423f81b/tierprizes.jpg?v=1732612145731",
+  "events": [
+    {
+      "event_name": "Chipotle Dine and Donate",
+      "event_date": "November 19",
+      "event_location": "Chipotle Royersford",
+      "event_description": "5-9pm"
+    }
+  ]
+}
